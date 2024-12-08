@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Appointment</title>
+</head>
+<body>
+    <h2>Edit Appointment</h2>
+    
+    <form action="/user/update-appointment" method="post">
+        <input type="hidden" name="id" th:value="${app.id}"/>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:value="${app.name}" required />
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" th:value="${app.email}" required />
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" th:value="${app.date}" required />
+        
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" th:value="${app.time}" required />
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required th:text="${app.description}"></textarea>
+
+        <button type="submit">Update Appointment</button>
+    </form>
+</body>
+</html>
